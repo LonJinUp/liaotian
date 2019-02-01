@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天页面</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/base.css">
+    <!--弹框-->
+    <link rel="stylesheet" href="layer_mobile/need/layer.css">
+</head>
+<body>
+   <div class="title-box">
+
+       <a href="javascript:history.back(-1)">
+           <i class="iconfont icon-left">&#xe6cd;</i>
+       </a>
+        <div class="people-box">
+            <span>与马云聊天</span>
+        </div>
+       <!--聊天框-->
+       <div class="chat">
+           <div class="chat-box">
+                <ul>
+                    <!--聊天时间-->
+                    <li class="chat-time">
+                        <span>01-29 18:47</span>
+                    </li>
+                    <!--左侧-->
+                    <li class="chat-left">
+                        <!--左侧头像-->
+                        <div class="left-logo">
+                            <img src="image/logo.jpg" alt="">
+                            <!--用户名字-->
+                            <cite>我是马云</cite>
+                        </div>
+                        <!--文本内容-->
+                        <div class="chat-text">
+                           嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验
+                            <a class="option">
+                                <i class="iconfont icon-card">&#xe753;</i>
+                                <span class="card-text">进入我的名片</span>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                            <a class="option">
+                                <i class="iconfont icon-card color-green">&#xe600;</i>
+                                <span class="card-text">进入官网</span>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                            <a class="option">
+                                <i class="iconfont icon-card color-red">&#xe64b;</i>
+                                <span class="card-text">查看我的产品</span>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                            <a class="option">
+                                <i class="iconfont icon-card color-pyq">&#xe619;</i>
+                                <span class="card-text">查看动态</span>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                            <a class="option">
+                                <i class="iconfont icon-card color-phone">&#xe617;</i>
+                                <span class="card-text" >拨打电话</span>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                            <a class="option" id="wechat">
+                                <i class="iconfont icon-card color-wechat">&#xe66c;</i>
+                                <div class="card-text">添加微信</div>
+                                <i class="iconfont icon-right">&#xe601;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <!--右侧-->
+                    <li class="chat-right">
+                        <!--头像-->
+                        <div class="right-logo">
+                            <img src="image/logo.jpg" alt="">
+                            <cite>李嘉诚</cite>
+                        </div>
+                        <!--文字-->
+                        <div class="chat-text-right">
+                            嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验嗨，欢迎体验
+
+
+                        </div>
+
+                    </li>
+                </ul>
+           </div>
+           <!--聊天底部-->
+           <div class="chat-footer">
+                <div class="chat-send">
+                    <input type="text">
+                    <button class="send">发送</button>
+                </div>
+               <div class="chat-tool">
+                   <i class="iconfont icon-pic">&#xe631;</i>
+                   <i class="iconfont icon-file">&#xe61d;</i>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</body>
+<script src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+<!--点击复制插件-->
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<!--弹框-->
+<script src="layer_mobile/layer.js"></script>
+<script src="js/mobile.js"></script>
+<script>
+    $("#wechat").click(function () {
+        layer.open({
+            content: '一个没有任何按钮的底部提示'
+            ,skin: 'header'
+        });
+    })
+</script>
+</html>

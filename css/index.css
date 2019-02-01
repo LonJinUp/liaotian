@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 1036080 */
+    src: url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.eot');
+    src: url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1036080_6v4oropdk6w.svg#iconfont') format('svg');
+}
+.title-box{
+    width: 100%;
+    height: 1rem;
+    box-sizing: border-box;
+    padding: 0 .15rem;
+    background-color: #36373C;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+body{
+    background-color: #eee;
+    font-family: "PingFang SC";
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+.icon-left{
+    color: #fff;
+}
+.people-box{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.people-box span{
+    color: #fff;
+    font-family: "PingFang SC";
+    font-size: .28rem;
+}
+.chat{
+    position: fixed;
+    top:1rem;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.chat-box{
+    position: fixed;
+    top:1rem;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    bottom: 85px;
+    padding: 15px;
+    box-sizing: border-box;
+
+}
+.chat-box ul{
+    /*overflow-x: hidden;*/
+}
+.chat-box ul li{
+    position: relative;
+
+}
+.chat-time{
+    min-height: 0;
+    margin: 20px 0 5px;
+    padding: 0;
+    text-align: center;
+}
+.chat-time span{
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 3px;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+.chat-left{
+    position: relative;
+    font-size: 0;
+    margin-bottom: 50px;
+    padding-left: 60px;
+    min-height: 68px;
+}
+.left-logo{
+    position: absolute;
+    left: 3px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+}
+.left-logo img,.right-logo img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+.chat-left cite{
+    position: absolute;
+    left: 60px;
+    top: -2px;
+    width: 500px;
+    line-height: 24px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #999;
+    text-align: left;
+    font-style: normal;
+    font-family: "PingFang SC";
+}
+.chat-text{
+    position: relative;
+    min-height: 22px;
+    line-height: 22px;
+    margin-top: 25px;
+    padding: 8px 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #333;
+    word-break: break-all;
+    top: 26px;
+    font-size: 18px;
+}
+.chat-text:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 13px;
+    width: 0;
+    height: 0;
+    border-style: solid dashed dashed;
+    border-color: #fff transparent transparent;
+    overflow: hidden;
+    border-width: 10px;
+}
+.chat-right{
+    text-align: right;
+    padding-left: 0;
+    padding-right: 60px;
+    position: relative;
+    font-size: 0;
+    margin-bottom: 50px;
+    min-height: 68px;
+    box-sizing: content-box;
+}
+.right-logo{
+    left: auto;
+    right: 3px;
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+}
+.right-logo cite{
+    left: auto;
+    right: 60px;
+    text-align: right;
+    position: absolute;
+    top: -2px;
+    width: 500px;
+    line-height: 24px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #999;
+    font-style: normal;
+
+}
+.chat-text-right{
+    margin-left: 0;
+    text-align: left;
+    background-color: #5FB878;
+    color: #fff;
+    position: relative;
+    min-height: 22px;
+    line-height: 22px;
+    margin-top: 25px;
+    padding: 8px 15px;
+    border-radius: 3px;
+    word-break: break-all;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+}
+.chat-text-right::after{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 13px;
+    width: 0;
+    height: 0;
+    border-style: solid dashed dashed;
+    border-color: #fff transparent transparent;
+    overflow: hidden;
+    border-width: 10px;
+    left: auto;
+    right: -10px;
+    border-top-color: #5FB878;
+}
+.chat-footer{
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 80px;
+}
+.chat-send{
+   display: flex;
+    box-sizing: content-box;
+}
+.chat-send input{
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 40px;
+    padding:0 5px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.send{
+    border-radius: 3px;
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    margin-left: 10px;
+    background-color: #5FB878;
+    color: #fff;
+}
+.chat-tool{
+    position: relative;
+    width: 100%;
+    padding: 0;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 3px;
+    font-size: 0;
+    white-space: nowrap;
+    box-sizing: content-box;
+}
+
+.icon-pic,.icon-file{
+    font-size: 30px;
+    margin-right: 20px;
+}
+.option{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f6ff;
+    margin: 5px auto;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 2px;
+    position: relative;
+
+}
+.icon-card{
+    color:#00b7ee;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.card-text{
+    color: #0C0C0C;
+    font-size: 14px;
+}
+.icon-right{
+    position: absolute;
+    right: 0;
+    color: #0C0C0C;
+    font-size: 20px;
+}
+.color-green{
+    color: #3cebb5;
+}
+.color-red{
+    color: red;
+}
+.color-pyq{
+    color: #469aeb;
+}
+.color-phone{
+    color: #eb5326;
+}
+.color-wechat{
+    color: #96ebb2;
+}
+.wechat-img{
+    width: 150px;
+    height:auto;
+}
