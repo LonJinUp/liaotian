@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章详情</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+</head>
+<style>
+    body{
+        font-family: "PingFang SC";
+    }
+    .top-box{
+        width: 100%;
+        height: .88rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+        background: #fff;
+        font-size: 0.3rem;
+        white-space: nowrap;
+        z-index: 10010;
+        -webkit-box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.08);
+        box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.08);
+
+    }
+    .index-box{
+        display: block;
+        background-color: #ff2741;
+        border-radius: .3rem;
+
+        box-sizing: border-box;
+        padding: 0 .1rem;
+        color:#fff;
+        font-size: .26rem;
+    }
+    .share{
+        color: #ff2741;
+    }
+    .top-box2{
+        width: 100%;
+        height: .8rem;
+    }
+    .swiper-slide img{
+        width: 100%;
+        height: auto;
+    }
+    .user-box{
+        width: 100%;
+        height: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+        align-items: center;
+        border-bottom:.01rem solid #ccc;
+    }
+    .user-logo img{
+        width:0.84rem ;
+        height: 0.84rem;
+        border-radius: 50%;
+        margin-right: .3rem;
+    }
+    .user-logo span{
+        color: #333;
+        font-weight: bold;
+        font-size: .26rem;
+    }
+    .user-logo{
+        display: flex;
+        align-items: center;
+    }
+    .attention{
+        border-radius: 4PX;
+        color: #ff2741;
+        background-color: #fff;
+        width: 1.12rem;
+        height: 0.5rem;
+        text-align: center;
+        line-height: .5rem;
+        font-size: 0.26rem;
+        border: 1PX solid #ff2741;
+    }
+    .text-box{
+        box-sizing: border-box;
+        padding: 0.2rem 0.3rem 0.3rem;
+        overflow: hidden;
+        font-size: .32rem;
+    }
+    .like-box{
+        margin: 0;
+        margin-top: 0.4rem;
+        padding: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+    }
+    .like-box li{
+        margin: 0;
+        margin-right: 0.5rem;
+        list-style: none;
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+    .like-box li span{
+        color: #555;
+        font-size: 0.3rem;
+        vertical-align: top;
+        height: 0.4rem;
+        padding-left: 0.06rem;
+    }
+    .like-box li i{
+        width: 0.32rem;
+        height: 0.32rem;
+    }
+    .date-box{
+        margin-top: 0.4rem;
+        color: #999;
+        font-size: 0.26rem;
+        line-height: 0.3rem;
+        box-sizing: border-box;
+        padding:0  .3rem;
+        padding-bottom:.3rem;
+
+    }
+    @font-face {
+        font-family: 'iconfont';  /* project id 880012 */
+        src: url('//at.alicdn.com/t/font_880012_l2fdejzql29.eot');
+        src: url('//at.alicdn.com/t/font_880012_l2fdejzql29.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_880012_l2fdejzql29.woff2') format('woff2'),
+        url('//at.alicdn.com/t/font_880012_l2fdejzql29.woff') format('woff'),
+        url('//at.alicdn.com/t/font_880012_l2fdejzql29.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_880012_l2fdejzql29.svg#iconfont') format('svg');
+    }
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:16px;font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;}
+
+
+    .body-color{
+        background-color: #f5f8fa;
+        width: 100%;
+        height: .4rem;
+
+    }
+    .comment-box{
+        height: 0.98rem;
+        width: 100%;
+        border-bottom:.01rem solid #ccc;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+    }
+    .comment-box h3{
+        font-size: 0.3rem;
+        font-weight: 500;
+        color: #333;
+    }
+    .comment{
+        padding: 0.3rem;
+        box-sizing: border-box;
+        overflow: hidden;
+
+    }
+    .comment-left{
+        float: left;
+        width: 16%;
+        height: 100%;
+    }
+    .comment-left img{
+        width: 0.84rem;
+        height: 0.84rem;
+        border-radius: 50%;
+        margin-right: .3rem;
+    }
+    .comment-right{
+        float: left;
+        width: 80%;
+        height: 100%;
+    }
+    .comment-user-name{
+        display: block;
+        text-decoration: none;
+        color: #333;
+        font-size: 0.3rem;
+        font-weight: 500;
+        line-height: 0.34rem;
+    }
+    .comment-time{
+        display: inline-block;
+        margin-top: 0.1rem;
+        font-size: 0.22rem;
+        line-height: 0.26rem;
+        color: #999;
+    }
+    .comment-text{
+        margin-top: .2rem;
+        font-size: 0.3rem;
+        line-height: 0.45rem;
+    }
+    .other-box{
+        background-color: #f5f8fa;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+    }
+    .other-item{
+        width:48%;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.04);
+        box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.04);
+        border-radius: 0.08rem;
+        overflow: hidden;
+        display: block;
+        float: left;
+        margin-top: .2rem;
+    }
+    .other-item img{
+        width: 100%;
+        height: 100%;
+    }
+    .other-item:nth-child(odd){
+        margin-right: .2rem;
+    }
+    .other-text{
+        font-size: 0.26rem;
+        padding: 0.2rem 0.2rem 0;
+        min-height: 0.6rem;
+        line-height: 150%;
+    }
+    .other-text h3{
+        color: #333;
+        margin: 0 auto;
+        font-weight: 500;
+        font-size: 0.26rem;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .other-user{
+        padding: 0.2rem;
+        line-height: 0.5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+    .other-user img{
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        margin-right: .2rem;
+    }
+    .other-user span{
+        right: 0.2rem;
+        color: #666;
+        font-size: 0.26rem;
+        height: 0.5rem;
+        line-height: 0.5rem;
+    }
+    #bottom-box{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: .88rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+        background: #fff;
+        font-size: 0.3rem;
+        white-space: nowrap;
+        z-index: 10010;
+        -webkit-box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.08);
+        box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,0.08);
+    }
+</style>
+<body>
+    <div class="top-box">
+        <span class="share">分享你的故事</span>
+        <a href="" class="index-box">打开看看</a>
+    </div>
+    <!--<div class="top-box2"></div>-->
+    <!--swiper-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://ci.xiaohongshu.com/4a27ad22-5437-561b-917e-e42142102ad2?imageView2/2/w/828/q/82/format/jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://ci.xiaohongshu.com/d7b2a85e-de71-5306-8067-6eaba813cff5?imageView2/2/w/828/q/82/format/jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://ci.xiaohongshu.com/e76d79cc-209f-53f4-b35d-1ab5de9420f9?imageView2/2/w/828/q/82/format/jpg" alt="">
+            </div>
+
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--swiper end-->
+
+    <!--user-->
+    <div class="user-box">
+        <div class="user-logo">
+            <img src="image/logo.jpg" alt="">
+            <span>景秀山河</span>
+        </div>
+        <div class="attention">主页</div>
+    </div>
+    <div class="text-box">
+        🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。🏃‍♀️运动：260卡，跑步1.5公里，无氧20分钟。
+    </div>
+    <ul class="like-box">
+        <li>
+            <i class="iconfont">&#xe605;</i>
+            <span>10</span>
+        </li>
+        <li>
+            <i class="iconfont">&#xe602;</i>
+            <span>10</span>
+        </li>
+    </ul>
+    <!--user end-->
+    <!--time-->
+    <div class="date-box">
+        发布于:2019-10.2
+    </div>
+    <!--time end-->
+    <div class="body-color"></div>
+
+    <!--comment-->
+    <div class="comment-box">
+        <h3>精彩评论</h3>
+    </div>
+    <div class="comment">
+        <div class="comment-left">
+            <img src="image/logo.jpg" alt="">
+        </div>
+        <div class="comment-right">
+            <a href="#" class="comment-user-name">前端工程师</a>
+            <span class="comment-time">2019-10-10</span>
+            <p class="comment-text">
+                好精致啊，我下学期自己住了也要向你学习!
+            </p>
+        </div>
+    </div>
+    <div class="comment">
+        <div class="comment-left">
+            <img src="image/logo.jpg" alt="">
+        </div>
+        <div class="comment-right">
+            <a href="#" class="comment-user-name">前端工程师</a>
+            <span class="comment-time">2019-10-10</span>
+            <p class="comment-text">
+                好精致啊，我下学期自己住了也要向你学习!
+            </p>
+        </div>
+    </div>
+    <!--comment end -->
+    <div class="body-color"></div>
+    <!--other-->
+    <div class="comment-box">
+        <h3>其他文章</h3>
+    </div>
+    <div class="body-color"></div>
+
+    <div class="other-box">
+        <a href="" class="other-item">
+            <div class="other-img">
+                <img src="https://ci.xiaohongshu.com/39e509a8-b11b-5d20-9885-af6fb0988ff4?imageView2/2/w/400/q/50/format/jpg" alt="">
+            </div>
+            <div class="other-text">
+                <h3>好精致啊，我下学期自己住了也要向你学习!</h3>
+            </div>
+            <div class="other-user">
+                <img src="image/logo.jpg" alt="">
+                <span>你好的好</span>
+            </div>
+        </a>
+        <a href="" class="other-item">
+            <div class="other-img">
+                <img src="https://ci.xiaohongshu.com/39e509a8-b11b-5d20-9885-af6fb0988ff4?imageView2/2/w/400/q/50/format/jpg" alt="">
+            </div>
+            <div class="other-text">
+                <h3>好精致啊，我下学期自己住了也要向你学习!</h3>
+            </div>
+            <div class="other-user">
+                <img src="image/logo.jpg" alt="">
+                <span>你好的好</span>
+            </div>
+        </a>
+        <a href="" class="other-item">
+            <div class="other-img">
+                <img src="https://ci.xiaohongshu.com/39e509a8-b11b-5d20-9885-af6fb0988ff4?imageView2/2/w/400/q/50/format/jpg" alt="">
+            </div>
+            <div class="other-text">
+                <h3>好精致啊，我下学期自己住了也要向你学习!</h3>
+            </div>
+            <div class="other-user">
+                <img src="image/logo.jpg" alt="">
+                <span>你好的好</span>
+            </div>
+        </a>
+        <a href="" class="other-item">
+            <div class="other-img">
+                <img src="https://ci.xiaohongshu.com/74ab7a92-038b-4670-baf6-635a24ab23ba?imageView2/2/w/400/q/50/format/jpg" alt="">
+            </div>
+            <div class="other-text">
+                <h3>好精致啊，我下学期自己住了也要向你学习!</h3>
+            </div>
+            <div class="other-user">
+                <img src="image/logo.jpg" alt="">
+                <span>你好的好</span>
+            </div>
+        </a>
+
+    </div>
+    <div class="body-color"></div>
+    <div class="top-box2"></div>
+    <div  id="bottom-box">
+        <span class="share">朋友圈营销神器</span>
+        <a href="" class="index-box">点击查看</a>
+    </div>
+
+</body>
+<script src="js/mobile.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    //轮播插件
+    var mySwiper = new Swiper ('.swiper-container', {
+        autoplay: {
+            delay: 2000,//1秒切换一次
+        },
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+    //浏览器滚动条监视
+    $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
+        var scrollHeight = $(document).height();
+        var windowHeight = $(this).height();
+        if(scrollTop >400){
+            $("#bottom-box").css("display","flex");
+            console.log(1)
+        }else{
+            $("#bottom-box").css("display","none");
+            console.log(2)
+        }
+    });
+</script>
+</html>

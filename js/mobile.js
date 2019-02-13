@@ -19,12 +19,12 @@
 })(document, window);
 
 //获取地址栏参数
-function GetURL(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]);
-    return null;
-};
+// function GetURL(name) {
+//     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+//     var r = window.location.search.substr(1).match(reg);
+//     if (r != null) return unescape(r[2]);
+//     return null;
+// };
 
 //设置cooke
 function setCookie(name, value, day) {
@@ -50,9 +50,9 @@ function delCookie(name) {
 };
 
 //用于flex定位下的input，失去焦点布局被顶上去
-$("input,select").blur(function () {
-    setTimeout(() => {
-        const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
-        window.scrollTo(0, Math.max(scrollHeight - 1, 0));
-    }, 100);
-});
+// $("input,select").blur(function () {
+//     setTimeout(() => {
+//         const scrollHeight = document.documentElement.scrollTop || document.body.scrollTop || 0;
+//         window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+//     }, 100);
+// });
