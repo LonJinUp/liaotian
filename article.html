@@ -476,52 +476,5 @@
 <script src="js/mobile.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
 <script src="layer_mobile/layer.js"></script>
-
-
-<script>
-    //轮播插件
-    var mySwiper = new Swiper ('.swiper-container', {
-        autoplay: {
-            delay: 2000,//1秒切换一次
-        },
-        loop: true, // 循环模式选项
-
-        // 如果需要分页器
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // 如果需要前进后退按钮
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    })
-    //浏览器滚动条监视
-    $(window).scroll(function(){
-        var scrollTop = $(this).scrollTop();
-        var scrollHeight = $(document).height();
-        var windowHeight = $(this).height();
-        if(scrollTop >400){
-            $("#bottom-box").css("display","flex");
-            console.log(1)
-        }else{
-            $("#bottom-box").css("display","none");
-            console.log(2)
-        }
-    });
-
-    //点击回复
-    $("#reply").click(function () {
-        layer.open({
-            type: 1
-            ,content: ` <div class="reply-box" style="box-sizing: border-box">
-            <textarea name="" id="" cols="30" rows="6"></textarea>
-        </div>
-        <div class="reply-button">发表留言</div>`
-            ,anim: 'scale'
-            ,style: ' position: relative;left:0; top:0;bottom:0;right:0;margin:auto; width:86%; height:30%; border: none; -webkit-animation-duration: .5s; animation-duration: .5s; border-radius: 10px;'
-        });
-    })
-</script>
+<script src="js/article.js"></script>
 </html>
